@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,58 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScratchDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXQ-5c-gtB">
+                                <rect key="frame" x="40" y="316" width="127.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Jcr-ku-mle"/>
+                                </constraints>
+                                <state key="normal" title="中奖">
+                                    <color key="titleColor" red="0.95195597409999999" green="0.27984836699999999" blue="0.27669841049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mBl-Dd-0z4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz7-wk-OSN">
+                                <rect key="frame" x="207.5" y="316" width="127.5" height="35"/>
+                                <state key="normal" title="未中奖">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4N-TO-UyK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一个简单的刮奖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1F-zs-NFz">
+                                <rect key="frame" x="134" y="218" width="107.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U1F-zs-NFz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4qn-M5-geF"/>
+                            <constraint firstItem="AXQ-5c-gtB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="7te-hg-P1R"/>
+                            <constraint firstItem="AXQ-5c-gtB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Av6-3v-Dry"/>
+                            <constraint firstItem="AXQ-5c-gtB" firstAttribute="top" secondItem="U1F-zs-NFz" secondAttribute="bottom" constant="80" id="ETf-Tr-qSX"/>
+                            <constraint firstItem="Kz7-wk-OSN" firstAttribute="centerY" secondItem="AXQ-5c-gtB" secondAttribute="centerY" id="TZa-Me-Fh9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kz7-wk-OSN" secondAttribute="trailing" constant="40" id="XUw-0V-X69"/>
+                            <constraint firstItem="Kz7-wk-OSN" firstAttribute="leading" secondItem="AXQ-5c-gtB" secondAttribute="trailing" constant="40" id="cgB-2q-Pal"/>
+                            <constraint firstItem="Kz7-wk-OSN" firstAttribute="leading" secondItem="AXQ-5c-gtB" secondAttribute="trailing" constant="40" id="ddU-AD-sWN"/>
+                            <constraint firstItem="Kz7-wk-OSN" firstAttribute="width" secondItem="AXQ-5c-gtB" secondAttribute="width" id="pGE-C5-VgV"/>
+                            <constraint firstItem="Kz7-wk-OSN" firstAttribute="height" secondItem="AXQ-5c-gtB" secondAttribute="height" id="yhj-df-ISa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="buttons" destination="Kz7-wk-OSN" collectionClass="NSMutableArray" id="B9S-48-9pk"/>
+                        <outletCollection property="buttons" destination="AXQ-5c-gtB" collectionClass="NSMutableArray" id="tIz-jm-f39"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
